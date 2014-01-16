@@ -20,7 +20,7 @@ class UnitAdmin extends Admin
             ->add('value')
             ->add('description')
             ->add('valid')
-            ->add('id')
+//            ->add('id')
         ;
     }
 
@@ -34,7 +34,7 @@ class UnitAdmin extends Admin
             ->add('value')
             ->add('description')
             ->add('valid')
-            ->add('id')
+//            ->add('id')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array(),
@@ -55,7 +55,7 @@ class UnitAdmin extends Admin
             ->add('value')
             ->add('description')
             ->add('valid')
-            ->add('id')
+//            ->add('id')
         ;
     }
 

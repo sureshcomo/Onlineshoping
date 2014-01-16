@@ -17,9 +17,9 @@ class CategoryAdmin extends Admin
     {
         $datagridMapper
             ->add('name')
-            ->add('description')
+//            ->add('description')
             ->add('status')
-            ->add('id')
+//            ->add('id')
         ;
     }
 
@@ -32,7 +32,7 @@ class CategoryAdmin extends Admin
             ->add('name')
             ->add('description')
             ->add('status')
-            ->add('id')
+//            ->add('id')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array(),
@@ -52,7 +52,7 @@ class CategoryAdmin extends Admin
             ->add('name')
             ->add('description')
             ->add('status')
-            ->add('id')
+//            ->add('id')
         ;
     }
 

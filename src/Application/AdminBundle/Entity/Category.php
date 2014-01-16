@@ -27,7 +27,7 @@ class Category
     /**
      * @var boolean
      */
-    private $status;
+    private $status = false;
 
 
     /**

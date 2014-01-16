@@ -32,7 +32,7 @@ class Unit
     /**
      * @var boolean
      */
-    private $valid;
+    private $valid = false;
 
 
     /**

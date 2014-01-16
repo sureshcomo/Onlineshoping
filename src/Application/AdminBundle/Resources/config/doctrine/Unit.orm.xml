@@ -3,13 +3,13 @@
   <entity 
       repository-class="Application\AdminBundle\Entity\UnitRepository" 
       name="Application\AdminBundle\Entity\Unit"
-      table="units">
+      table="oshop_units">
     <id name="id" type="integer" column="id">
       <generator strategy="AUTO"/>
     </id>
     <field name="name" type="string" column="name" length="123"/>
-    <field name="value" type="string" column="value" length="123"/>
-    <field name="description" type="string" column="description" length="523"/>
-    <field name="valid" type="boolean" column="valid"/>
+    <field name="value" type="string" column="value" length="123" nullable="true"/>
+    <field name="description" type="string" column="description" nullable="true" length="523"/>
+    <field name="valid" type="boolean" column="valid" nullable="true"/>
   </entity>
 </doctrine-mapping>
