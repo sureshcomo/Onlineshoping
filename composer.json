@@ -18,10 +18,14 @@
         "sensio/distribution-bundle": "~2.3",
         "sensio/framework-extra-bundle": "~3.0",
         "sensio/generator-bundle": "~2.3",
+        
         "jms/security-extra-bundle": "dev-master",
         "incenteev/composer-parameter-handler": "~2.0",
+        
         "sonata-project/core-bundle": "~2.2@dev",
         "sonata-project/admin-bundle": "*",
+        "sonata-project/user-bundle": "~2.2",
+        "friendsofsymfony/user-bundle": "~2.0@dev",
         "sonata-project/doctrine-orm-admin-bundle": "*"
     },
     "scripts": {

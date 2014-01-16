@@ -42,6 +42,12 @@ assetic:
         #yui_css:
         #    jar: "%kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar"
 
+
+#fos_user:
+#    db_driver:      orm # can be orm or odm
+#    firewall_name:  main
+#    user_class:     Application\Sonata\UserBundle\Entity\User
+
 # Doctrine Configuration
 doctrine:
     dbal:

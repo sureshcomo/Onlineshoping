@@ -6635,7 +6635,13 @@ $builder->add($infos);
 } else {
 list($name, $type, $options) = $infos;
 if (is_callable($options)) {
-$options = $options($builder, $options);
+$extra = array_slice($infos, 3);
+$options = $options($builder, $name, $type, $extra);
+if ($options === null) {
+$options = array();
+} else if (!is_array($options)){
+throw new \RuntimeException('the closure must return null or an array');
+}
 }
 $builder->add($name, $type, $options);
 }
