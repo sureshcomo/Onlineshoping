@@ -31,6 +31,15 @@ class Category
 
 
     /**
+     * Textual representation of the object while selecting
+     * @return type
+     */
+    public function __toString()
+    {
+        return $this->name;
+    }
+    
+    /**
      * Get id
      *
      * @return integer 
