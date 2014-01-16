@@ -3,7 +3,7 @@
   <entity 
       repository-class="Application\AdminBundle\Entity\CategoryRepository"
       name="Application\AdminBundle\Entity\Category"
-      table="oshop__category">
+      table="oshop_category">
     <id name="id" type="integer" column="id">
       <generator strategy="AUTO"/>
     </id>
