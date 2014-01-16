@@ -1,0 +1,18 @@
+Application\Sonata\AdminBundle\Entity\Category:
+    type: entity
+    table: category
+    repositoryClass: Application\Sonata\AdminBundle\Entity\CategoryRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        description:
+            type: string
+            length: '523'
+    lifecycleCallbacks: {  }
