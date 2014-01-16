@@ -16,3 +16,9 @@ services:
         arguments: [~, Application\AdminBundle\Entity\Unit, ApplicationAdminBundle:UnitAdmin]
         tags:
             - {name: sonata.admin, manager_type: orm, group: admin, label: Unit}
+
+    application_admin.admin.item:
+        class: Application\AdminBundle\Admin\ItemAdmin
+        arguments: [~, Application\AdminBundle\Entity\Item, ApplicationAdminBundle:ItemAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Item}
