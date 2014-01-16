@@ -183,40 +183,81 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CoreController::searchAction',  '_route' => 'sonata_admin_search',);
             }
 
-            if (0 === strpos($pathinfo, '/admin/application/admin/category')) {
-                // admin_application_admin_category_list
-                if ($pathinfo === '/admin/application/admin/category/list') {
-                    return array (  '_controller' => 'Application\\AdminBundle\\Controller\\CategoryAdminController::listAction',  '_sonata_admin' => 'application_admin.admin.category',  '_sonata_name' => 'admin_application_admin_category_list',  '_route' => 'admin_application_admin_category_list',);
+            if (0 === strpos($pathinfo, '/admin/application/admin')) {
+                if (0 === strpos($pathinfo, '/admin/application/admin/category')) {
+                    // admin_application_admin_category_list
+                    if ($pathinfo === '/admin/application/admin/category/list') {
+                        return array (  '_controller' => 'Application\\AdminBundle\\Controller\\CategoryAdminController::listAction',  '_sonata_admin' => 'application_admin.admin.category',  '_sonata_name' => 'admin_application_admin_category_list',  '_route' => 'admin_application_admin_category_list',);
+                    }
+
+                    // admin_application_admin_category_create
+                    if ($pathinfo === '/admin/application/admin/category/create') {
+                        return array (  '_controller' => 'Application\\AdminBundle\\Controller\\CategoryAdminController::createAction',  '_sonata_admin' => 'application_admin.admin.category',  '_sonata_name' => 'admin_application_admin_category_create',  '_route' => 'admin_application_admin_category_create',);
+                    }
+
+                    // admin_application_admin_category_batch
+                    if ($pathinfo === '/admin/application/admin/category/batch') {
+                        return array (  '_controller' => 'Application\\AdminBundle\\Controller\\CategoryAdminController::batchAction',  '_sonata_admin' => 'application_admin.admin.category',  '_sonata_name' => 'admin_application_admin_category_batch',  '_route' => 'admin_application_admin_category_batch',);
+                    }
+
+                    // admin_application_admin_category_edit
+                    if (preg_match('#^/admin/application/admin/category/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_application_admin_category_edit')), array (  '_controller' => 'Application\\AdminBundle\\Controller\\CategoryAdminController::editAction',  '_sonata_admin' => 'application_admin.admin.category',  '_sonata_name' => 'admin_application_admin_category_edit',));
+                    }
+
+                    // admin_application_admin_category_delete
+                    if (preg_match('#^/admin/application/admin/category/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_application_admin_category_delete')), array (  '_controller' => 'Application\\AdminBundle\\Controller\\CategoryAdminController::deleteAction',  '_sonata_admin' => 'application_admin.admin.category',  '_sonata_name' => 'admin_application_admin_category_delete',));
+                    }
+
+                    // admin_application_admin_category_show
+                    if (preg_match('#^/admin/application/admin/category/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_application_admin_category_show')), array (  '_controller' => 'Application\\AdminBundle\\Controller\\CategoryAdminController::showAction',  '_sonata_admin' => 'application_admin.admin.category',  '_sonata_name' => 'admin_application_admin_category_show',));
+                    }
+
+                    // admin_application_admin_category_export
+                    if ($pathinfo === '/admin/application/admin/category/export') {
+                        return array (  '_controller' => 'Application\\AdminBundle\\Controller\\CategoryAdminController::exportAction',  '_sonata_admin' => 'application_admin.admin.category',  '_sonata_name' => 'admin_application_admin_category_export',  '_route' => 'admin_application_admin_category_export',);
+                    }
+
                 }
 
-                // admin_application_admin_category_create
-                if ($pathinfo === '/admin/application/admin/category/create') {
-                    return array (  '_controller' => 'Application\\AdminBundle\\Controller\\CategoryAdminController::createAction',  '_sonata_admin' => 'application_admin.admin.category',  '_sonata_name' => 'admin_application_admin_category_create',  '_route' => 'admin_application_admin_category_create',);
-                }
+                if (0 === strpos($pathinfo, '/admin/application/admin/unit')) {
+                    // admin_application_admin_unit_list
+                    if ($pathinfo === '/admin/application/admin/unit/list') {
+                        return array (  '_controller' => 'Application\\AdminBundle\\Controller\\UnitAdminController::listAction',  '_sonata_admin' => 'application_admin.admin.unit',  '_sonata_name' => 'admin_application_admin_unit_list',  '_route' => 'admin_application_admin_unit_list',);
+                    }
 
-                // admin_application_admin_category_batch
-                if ($pathinfo === '/admin/application/admin/category/batch') {
-                    return array (  '_controller' => 'Application\\AdminBundle\\Controller\\CategoryAdminController::batchAction',  '_sonata_admin' => 'application_admin.admin.category',  '_sonata_name' => 'admin_application_admin_category_batch',  '_route' => 'admin_application_admin_category_batch',);
-                }
+                    // admin_application_admin_unit_create
+                    if ($pathinfo === '/admin/application/admin/unit/create') {
+                        return array (  '_controller' => 'Application\\AdminBundle\\Controller\\UnitAdminController::createAction',  '_sonata_admin' => 'application_admin.admin.unit',  '_sonata_name' => 'admin_application_admin_unit_create',  '_route' => 'admin_application_admin_unit_create',);
+                    }
 
-                // admin_application_admin_category_edit
-                if (preg_match('#^/admin/application/admin/category/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_application_admin_category_edit')), array (  '_controller' => 'Application\\AdminBundle\\Controller\\CategoryAdminController::editAction',  '_sonata_admin' => 'application_admin.admin.category',  '_sonata_name' => 'admin_application_admin_category_edit',));
-                }
+                    // admin_application_admin_unit_batch
+                    if ($pathinfo === '/admin/application/admin/unit/batch') {
+                        return array (  '_controller' => 'Application\\AdminBundle\\Controller\\UnitAdminController::batchAction',  '_sonata_admin' => 'application_admin.admin.unit',  '_sonata_name' => 'admin_application_admin_unit_batch',  '_route' => 'admin_application_admin_unit_batch',);
+                    }
 
-                // admin_application_admin_category_delete
-                if (preg_match('#^/admin/application/admin/category/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_application_admin_category_delete')), array (  '_controller' => 'Application\\AdminBundle\\Controller\\CategoryAdminController::deleteAction',  '_sonata_admin' => 'application_admin.admin.category',  '_sonata_name' => 'admin_application_admin_category_delete',));
-                }
+                    // admin_application_admin_unit_edit
+                    if (preg_match('#^/admin/application/admin/unit/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_application_admin_unit_edit')), array (  '_controller' => 'Application\\AdminBundle\\Controller\\UnitAdminController::editAction',  '_sonata_admin' => 'application_admin.admin.unit',  '_sonata_name' => 'admin_application_admin_unit_edit',));
+                    }
 
-                // admin_application_admin_category_show
-                if (preg_match('#^/admin/application/admin/category/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_application_admin_category_show')), array (  '_controller' => 'Application\\AdminBundle\\Controller\\CategoryAdminController::showAction',  '_sonata_admin' => 'application_admin.admin.category',  '_sonata_name' => 'admin_application_admin_category_show',));
-                }
+                    // admin_application_admin_unit_delete
+                    if (preg_match('#^/admin/application/admin/unit/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_application_admin_unit_delete')), array (  '_controller' => 'Application\\AdminBundle\\Controller\\UnitAdminController::deleteAction',  '_sonata_admin' => 'application_admin.admin.unit',  '_sonata_name' => 'admin_application_admin_unit_delete',));
+                    }
 
-                // admin_application_admin_category_export
-                if ($pathinfo === '/admin/application/admin/category/export') {
-                    return array (  '_controller' => 'Application\\AdminBundle\\Controller\\CategoryAdminController::exportAction',  '_sonata_admin' => 'application_admin.admin.category',  '_sonata_name' => 'admin_application_admin_category_export',  '_route' => 'admin_application_admin_category_export',);
+                    // admin_application_admin_unit_show
+                    if (preg_match('#^/admin/application/admin/unit/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_application_admin_unit_show')), array (  '_controller' => 'Application\\AdminBundle\\Controller\\UnitAdminController::showAction',  '_sonata_admin' => 'application_admin.admin.unit',  '_sonata_name' => 'admin_application_admin_unit_show',));
+                    }
+
+                    // admin_application_admin_unit_export
+                    if ($pathinfo === '/admin/application/admin/unit/export') {
+                        return array (  '_controller' => 'Application\\AdminBundle\\Controller\\UnitAdminController::exportAction',  '_sonata_admin' => 'application_admin.admin.unit',  '_sonata_name' => 'admin_application_admin_unit_export',  '_route' => 'admin_application_admin_unit_export',);
+                    }
+
                 }
 
             }

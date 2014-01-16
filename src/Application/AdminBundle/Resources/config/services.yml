@@ -10,3 +10,9 @@ services:
         arguments: [~, Application\AdminBundle\Entity\Category, ApplicationAdminBundle:CategoryAdmin]
         tags:
             - {name: sonata.admin, manager_type: orm, group: admin, label: Category}
+
+    application_admin.admin.unit:
+        class: Application\AdminBundle\Admin\UnitAdmin
+        arguments: [~, Application\AdminBundle\Entity\Unit, ApplicationAdminBundle:UnitAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Unit}
