@@ -8,12 +8,12 @@
       <generator strategy="AUTO"/>
     </id>
     
-    <many-to-one field="units" target-entity="Unit" mapped-by="name">
-    </many-to-one>
+    <many-to-one field="units" target-entity="Unit" mapped-by="name"/>
+    <many-to-one field="category" target-entity="Category" maped-by="name"/>
     
     <field name="name" type="string" column="name" length="123"/>
 <!--    <field name="units" type="object" column="units"/>-->
-    <field name="category" type="object" column="category"/>
-    <field name="description" type="string" column="description" length="523"/>
+<!--    <field name="category" type="object" column="category"/>-->
+    <field name="description" type="string" column="description" length="523" nullable= "true"/>
   </entity>
 </doctrine-mapping>
