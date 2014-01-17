@@ -1,12 +1,17 @@
 security:
     encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
+        FOS\UserBundle\Model\UserInterface: sha512
+#        Symfony\Component\Security\Core\User\User: plaintext
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+#        SONATA:
+#            - ROLE_SONATA_PAGE_ADMIN_PAGE_EDIT
 
     providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username
         in_memory:
             memory:
                 users:
@@ -25,6 +30,8 @@ security:
         secured_area:
             pattern:    ^/demo/secured/
             form_login:
+                provider: fos_userbundle
+                csrf_provider: form.csrf_provider
                 check_path: _security_check
                 login_path: _demo_login
             logout:
@@ -33,6 +40,9 @@ security:
             #anonymous: ~
             #http_basic:
             #    realm: "Secured Demo Area"
+            
+    acl:
+        connection: default
 
     access_control:
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }

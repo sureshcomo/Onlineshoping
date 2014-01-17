@@ -81,3 +81,13 @@ sonata_block:
         sonata.block.service.text:
         sonata.block.service.action:
         sonata.block.service.rss:
+    
+#sonata_user:
+#    security_acl: true
+##    class:                  # Entity Classes
+##        user:               Application\Sonata\UserBundle\Entity\User
+#    
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: Application\Sonata\UserBundle\Entity\User
