@@ -3,6 +3,7 @@
 namespace Application\Sonata\UserBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
+//use Sonata\UserBundle\Entity\BaseUser as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 /**
  * User
@@ -18,7 +19,7 @@ class User extends BaseUser
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
