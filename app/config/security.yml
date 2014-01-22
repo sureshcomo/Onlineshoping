@@ -6,82 +6,69 @@ security:
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
-#        SONATA:
-#            - ROLE_SONATA_PAGE_ADMIN_PAGE_EDIT
+        SONATA:
+            - ROLE_SONATA_PAGE_ADMIN_PAGE_EDIT
 
     providers:
         fos_userbundle:
-            id: fos_user.user_provider.username
+            id: fos_user.user_manager
+#            id: fos_user.user_provider.username
         in_memory:
             memory:
                 users:
                     user:  { password: userpass, roles: [ 'ROLE_USER' ] }
                     admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
 
-#    firewalls:
-#
-#            # -> custom firewall for the admin area of the URL
-#            admin:
-#                pattern:      /admin(.*)
-#                form_login:
-#                    provider:       fos_userbundle
-#                    login_path:     /admin/login
-#                    use_forward:    false
-#                    check_path:     /admin/login_check
-#                    failure_path:   null
-#                logout:
-#                    path:           /admin/logout
-#                anonymous:    true
-            # -> end custom configuration
-
-            # defaut login area for standard users
-#            main:
-#                pattern:      .*
-#                form_login:
-#                    provider:       fos_userbundle
-#                    login_path:     /login
-#                    use_forward:    false
-#                    check_path:     /login_check
-#                    failure_path:   null
-#                logout:       true
-#                anonymous:    true
     firewalls:
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        login:
-            pattern:  ^/demo/secured/login$
-            security: false
-
-        secured_area:
-            pattern:    ^/demo/secured/
+        admin:
+            pattern:            /admin(.*)
+            context:            user
             form_login:
-                provider: fos_userbundle
-                csrf_provider: form.csrf_provider
-                check_path: _security_check
-                login_path: _demo_login
+                provider:       fos_userbundle
+                login_path:     /admin/login
+                use_forward:    false
+                check_path:     /admin/login_check
+                failure_path:   null
             logout:
-                path:   _demo_logout
-                target: _demo
-            anonymous: ~
-#            #http_basic:
-#            #    realm: "Secured Demo Area"
+                path:           /admin/logout
+            anonymous:          true
 
-#        main:
-#            pattern:      .*
+        main:
+            pattern:             .*
+            context:             user
+            form_login:
+                provider:       fos_userbundle
+                login_path:     /login
+                use_forward:    false
+                check_path:     /login_check
+                failure_path:   null
+            logout:             true
+            anonymous:          true
+
+#        login:
+#            pattern:  ^/demo/secured/login$
+#            security: false
+#
+#        secured_area:
+#            pattern:    ^/demo/secured/
 #            form_login:
-#                 provider:       fos_userbundle
-#                 login_path:     /login
-#                 use_forward:    false
-#                 check_path:     /login_check
-#                 failure_path:   null
-#            logout:       true
-#                  anonymous:    ~
-
+#                provider: fos_userbundle
+#                csrf_provider: form.csrf_provider
+#                check_path: _security_check
+#                login_path: _demo_login
+#            logout:
+#                path:   _demo_logout
+#                target: _demo
+            #anonymous: ~
+            #http_basic:
+            #    realm: "Secured Demo Area"
+            
     acl:
         connection: default
 
     access_control:
-         - { path: ^/admin, roles: ROLE_ADMIN }
-#        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }

@@ -56,13 +56,17 @@ doctrine:
         # e.g. database_path: "%kernel.root_dir%/data/data.db3"
         # path:     "%database_path%"
 
+        types:
+             json: Sonata\Doctrine\Types\JsonType
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
-        auto_mapping: true
+#        auto_mapping: true
+        entity_managers:
+                    default:
+                        mappings:
+                            ApplicationSonataUserBundle: ~
+                            SonataUserBundle: ~
 
-        mappings:
-              FOSUserBundle: ~
-              ApplicationSonataUserBundle: ~
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -85,13 +89,21 @@ sonata_block:
         sonata.block.service.text:
         sonata.block.service.action:
         sonata.block.service.rss:
+        sonata.user.block.menu:    # used to display the menu in profile pages
+        sonata.user.block.account: # used to display menu option (login option)
+
     
-#sonata_user:
-#    security_acl: true
-#    class:                  # Entity Classes
-#        user:               Application\Sonata\UserBundle\Entity\User
+sonata_user:
+    security_acl: true
+    manager_type: orm
+    class:                  # Entity Classes
+             user:               Application\Sonata\UserBundle\Entity\User
+             group:              Application\Sonata\UserBundle\Entity\Group
 
 fos_user:
     db_driver: orm
     firewall_name: main
     user_class: Application\Sonata\UserBundle\Entity\User
+
+    group:
+            group_class:  Application\Sonata\UserBundle\Entity\Group
