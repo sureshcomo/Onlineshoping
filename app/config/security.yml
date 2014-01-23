@@ -35,6 +35,7 @@ security:
                 failure_path:   null
             logout:
                 path:           /admin/logout
+                target:         /admin/dashboard
             anonymous:          true
 
         main:
@@ -46,7 +47,9 @@ security:
                 use_forward:    false
                 check_path:     /login_check
                 failure_path:   null
-            logout:             true
+            logout:
+                 path:          /logout
+                 target:        /admin/dashboard
             anonymous:          true
 
     acl:
