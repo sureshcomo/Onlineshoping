@@ -37,6 +37,7 @@ return array(
     'Incenteev\\ParameterHandler' => array($vendorDir . '/incenteev/composer-parameter-handler'),
     'Google\\Authenticator' => array($vendorDir . '/sonata-project/google-authenticator/lib'),
     'FOS\\UserBundle' => array($vendorDir . '/friendsofsymfony/user-bundle'),
+    'FOS\\MessageBundle' => array($vendorDir . '/friendsofsymfony/message-bundle'),
     'Exporter' => array($vendorDir . '/sonata-project/exporter/lib'),
     'Doctrine\\ORM\\' => array($vendorDir . '/doctrine/orm/lib'),
     'Doctrine\\DBAL\\' => array($vendorDir . '/doctrine/dbal/lib'),

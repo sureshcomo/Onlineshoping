@@ -70,6 +70,7 @@ doctrine:
                             FOSUserBundle: ~
 
 
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"
@@ -109,3 +110,9 @@ fos_user:
 
     group:
             group_class:  Application\Sonata\UserBundle\Entity\Group
+
+
+fos_message:
+    db_driver: orm
+    thread_class: Application\FOS\MessageBundle\Entity\Thread
+    message_class: Application\FOS\MessageBundle\Entity\Message

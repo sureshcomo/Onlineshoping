@@ -1,0 +1,3 @@
+application_fos_message_message:
+    pattern:  /count
+    defaults: { _controller: ApplicationFOSMessageBundle:Message:getUnreadMessagesCount }

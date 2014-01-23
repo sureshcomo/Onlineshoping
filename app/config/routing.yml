@@ -1,3 +1,7 @@
+application_fos_message:
+    resource: "@ApplicationFOSMessageBundle/Resources/config/routing.yml"
+    prefix: /
+
 application_sonata_user:
     resource: "@ApplicationSonataUserBundle/Resources/config/routing.yml"
     prefix:   /
@@ -18,3 +22,7 @@ _sonata_admin:
 sonata_user:
     resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
     prefix: /admin
+
+fos_message:
+    resource: "@FOSMessageBundle/Resources/config/routing.xml"
+    prefix: /message
