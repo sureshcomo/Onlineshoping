@@ -63,6 +63,7 @@ doctrine:
 #        auto_mapping: true
         entity_managers:
                     default:
+                        auto_mapping: true
                         mappings:
                             ApplicationSonataUserBundle: ~
                             SonataUserBundle: ~

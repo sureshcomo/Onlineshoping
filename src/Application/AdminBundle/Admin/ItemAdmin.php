@@ -52,8 +52,8 @@ class ItemAdmin extends Admin
     {
         $formMapper
             ->add('name')
-            ->add('units','sonata_type_model_list')
-            ->add('category','sonata_type_model_list')
+            ->add('units','sonata_type_model')
+            ->add('category','sonata_type_model')
             ->add('description')
 //            ->add('id')
         ;
