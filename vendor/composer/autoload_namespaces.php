@@ -15,6 +15,7 @@ return array(
     'Symfony\\' => array($vendorDir . '/symfony/symfony/src'),
     'Sonata\\jQueryBundle' => array($vendorDir . '/sonata-project/jquery-bundle'),
     'Sonata\\UserBundle' => array($vendorDir . '/sonata-project/user-bundle'),
+    'Sonata\\NotificationBundle' => array($vendorDir . '/sonata-project/notification-bundle'),
     'Sonata\\EasyExtendsBundle' => array($vendorDir . '/sonata-project/easy-extends-bundle'),
     'Sonata\\Doctrine\\Types' => array($vendorDir . '/sonata-project/doctrine-extensions/src'),
     'Sonata\\DoctrineORMAdminBundle' => array($vendorDir . '/sonata-project/doctrine-orm-admin-bundle'),

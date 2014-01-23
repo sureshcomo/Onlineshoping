@@ -68,6 +68,8 @@ doctrine:
                             ApplicationSonataUserBundle: ~
                             SonataUserBundle: ~
                             FOSUserBundle: ~
+#                            SonataNotificationBundle: ~
+#                            ApplicationSonataNotificationBundle: ~
 
 
 
@@ -102,6 +104,9 @@ sonata_user:
     class:                  # Entity Classes
              user:               Application\Sonata\UserBundle\Entity\User
              group:              Application\Sonata\UserBundle\Entity\Group
+
+sonata_notification:
+    backend: sonata.notification.backend.runtime
 
 fos_user:
     db_driver: orm

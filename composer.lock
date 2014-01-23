@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "c2e814dc2c445e60f351932570520430",
+    "hash": "88811f53653656a263ee7872d0e2db45",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -2172,18 +2172,88 @@
             "time": "2013-03-01 17:24:02"
         },
         {
+            "name": "sonata-project/notification-bundle",
+            "version": "dev-master",
+            "target-dir": "Sonata/NotificationBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sonata-project/SonataNotificationBundle.git",
+                "reference": "671ccf1b5edd4df8a4dc43905afda9159d70a9b1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sonata-project/SonataNotificationBundle/zipball/671ccf1b5edd4df8a4dc43905afda9159d70a9b1",
+                "reference": "671ccf1b5edd4df8a4dc43905afda9159d70a9b1",
+                "shasum": ""
+            },
+            "require": {
+                "sonata-project/core-bundle": "~2.2",
+                "sonata-project/doctrine-extensions": "1.*",
+                "sonata-project/easy-extends-bundle": "2.1.*",
+                "symfony/symfony": "~2.1"
+            },
+            "require-dev": {
+                "guzzle/guzzle": "3.*",
+                "liip/monitor": "~1.0",
+                "liip/monitor-bundle": "~1.0",
+                "sonata-project/core-bundle": "dev-master",
+                "sonata-project/doctrine-orm-admin-bundle": "2.2.*",
+                "videlalvaro/php-amqplib": "2.0.*"
+            },
+            "suggest": {
+                "guzzle/guzzle": "3.*",
+                "liip/monitor-bundle": "~1.0",
+                "sonata-project/doctrine-orm-admin-bundle": "2.2.*",
+                "videlalvaro/php-amqplib": "2.0.*"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Sonata\\NotificationBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Rabaix",
+                    "email": "thomas.rabaix@sonata-project.org",
+                    "homepage": "http://sonata-project.org"
+                },
+                {
+                    "name": "Sonata Community",
+                    "homepage": "https://github.com/sonata-project/SonataNotificationBundle/contributors"
+                }
+            ],
+            "description": "Symfony SonataNotificationBundle",
+            "homepage": "http://sonata-project.org/bundles/page",
+            "keywords": [
+                "cms",
+                "page",
+                "sonata"
+            ],
+            "time": "2014-01-13 15:51:28"
+        },
+        {
             "name": "sonata-project/user-bundle",
             "version": "dev-master",
             "target-dir": "Sonata/UserBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataUserBundle.git",
-                "reference": "feea02716ba997f863c6b69ab0208978a1b603aa"
+                "reference": "86e396a2669195e44f99b56948a91a6ce370f7fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataUserBundle/zipball/feea02716ba997f863c6b69ab0208978a1b603aa",
-                "reference": "feea02716ba997f863c6b69ab0208978a1b603aa",
+                "url": "https://api.github.com/repos/sonata-project/SonataUserBundle/zipball/86e396a2669195e44f99b56948a91a6ce370f7fd",
+                "reference": "86e396a2669195e44f99b56948a91a6ce370f7fd",
                 "shasum": ""
             },
             "require": {
@@ -2238,7 +2308,7 @@
                 "sonata",
                 "user"
             ],
-            "time": "2014-01-22 18:40:51"
+            "time": "2014-01-23 10:48:17"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2736,7 +2806,8 @@
         "jms/security-extra-bundle": 20,
         "sonata-project/core-bundle": 20,
         "sonata-project/user-bundle": 20,
-        "friendsofsymfony/message-bundle": 20
+        "friendsofsymfony/message-bundle": 20,
+        "sonata-project/notification-bundle": 20
     },
     "platform": {
         "php": ">=5.3.3"
