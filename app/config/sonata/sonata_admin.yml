@@ -1,0 +1,5 @@
+
+sonata_admin:
+    title: Jobeet Admin
+    templates:
+        list_block: ::block_admin_list.html.twig

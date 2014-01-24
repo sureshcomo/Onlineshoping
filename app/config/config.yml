@@ -2,6 +2,13 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
 
+    # Sonata configuration
+
+    - { resource: sonata/sonata_admin.yml }
+    - { resource: sonata/sonata_user.yml }
+    - { resource: sonata/sonata_block.yml }
+    - { resource: sonata/sonata_notification.yml }
+
 framework:
     #esi:             ~
     translator:      { fallback: "%locale%" }
@@ -80,33 +87,7 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
-    
-    
-sonata_admin:
-    title: Jobeet Admin
- 
-sonata_block:
-    default_contexts: [cms]
-    blocks:
-        sonata.admin.block.admin_list:
-            contexts:   [admin]
- 
-        sonata.block.service.text:
-        sonata.block.service.action:
-        sonata.block.service.rss:
-        sonata.user.block.menu:    # used to display the menu in profile pages
-        sonata.user.block.account: # used to display menu option (login option)
 
-    
-sonata_user:
-    security_acl: true
-    manager_type: orm
-    class:                  # Entity Classes
-             user:               Application\Sonata\UserBundle\Entity\User
-             group:              Application\Sonata\UserBundle\Entity\Group
-
-sonata_notification:
-    backend: sonata.notification.backend.runtime
 
 fos_user:
     db_driver: orm
