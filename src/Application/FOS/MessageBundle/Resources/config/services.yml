@@ -1,0 +1,18 @@
+services:
+#    application_fos_message.admin.thread:
+#        class: Application\FOS\MessageBundle\Admin\ThreadAdmin
+#        arguments: [~, Application\FOS\MessageBundle\Entity\Thread, ApplicationFOSMessageBundle:ThreadAdmin]
+#        tags:
+#            - {name: sonata.admin, manager_type: orm, group: admin, label: Thread}
+
+    application_fos_message.admin.message:
+        class: Application\FOS\MessageBundle\Admin\MessageAdmin
+        arguments: [~, Application\FOS\MessageBundle\Entity\Message, ApplicationFOSMessageBundle:MessageAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Message}
+
+    sonata.block.service.message:
+        class: Application\FOS\MessageBundle\Block\MessageBlockService
+        arguments: [" sonata.block.service.message", @templating ]
+        tags:
+            - { name: sonata.block }
