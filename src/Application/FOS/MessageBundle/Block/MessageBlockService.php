@@ -49,7 +49,7 @@ class MessageBlockService extends BaseBlockService
         $settings = array_merge($this->getDefaultSettings(), $block->getSettings());
 
         return $this->renderResponse('ApplicationFOSMessageBundle::layout.html.twig', array(
-            'block'     => $blockContext->getBlock(),
+            'block'     => $block,
             'settings'  => $settings
         ), $response);
     }
