@@ -15,6 +15,12 @@ use Symfony\Component\HttpFoundation\Response;
 class MessageController extends Controller {
 
     public function getUnreadMessagesCountAction(){
+
+        $this->container->get('sonata.notification.backend')->createAndPublish('logger', array(
+            'level' => 'debug',
+            'message' => 'Hello world!'
+        ));
+
         $provider = $this->container->get('fos_message.provider');
         $count = $provider->getNbUnreadMessages();
 
