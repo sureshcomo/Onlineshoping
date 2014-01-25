@@ -5,6 +5,7 @@ sonata_admin:
     templates:
             # default global templates
             layout:  SonataAdminBundle::standard_layout.html.twig
+            edit: ApplicationFOSMessageBundle:Messages:list.html.twig
             ajax:    SonataAdminBundle::ajax_layout.html.twig
 
             # default actions templates, should extend a global templates

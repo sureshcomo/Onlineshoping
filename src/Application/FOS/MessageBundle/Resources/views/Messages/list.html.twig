@@ -1,0 +1,6 @@
+{% extends 'SonataAdminBundle:CRUD:base_list.html.twig' %}
+
+{% block list_table %}
+    {{ parent() }}
+    <a href="{{ url('fos_message_inbox') }}" class="btn btn-primary">{% trans from 'FOSMessageBundle' %}Message inbox{% endtrans %}</a>
+{% endblock %}

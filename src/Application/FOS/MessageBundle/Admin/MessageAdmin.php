@@ -7,6 +7,7 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
+use Sonata\AdminBundle\Route\RouteCollection;
 
 class MessageAdmin extends Admin
 {
@@ -35,7 +36,6 @@ class MessageAdmin extends Admin
                 'actions' => array(
                     'show' => array(),
                     'edit' => array(),
-                    'delete' => array(),
                 )
             ))
         ;
@@ -63,5 +63,25 @@ class MessageAdmin extends Admin
             ->add('createdAt')
             ->add('id')
         ;
+    }
+
+
+//    protected function configureRoutes(RouteCollection $collection)
+//    {
+//        $collection->add('duplicate');
+//        $collection->add('message', $this->getRouterIdParameter().'/message');
+//    }
+
+    public function getTemplate($name)
+    {
+        switch ($name) {
+            case 'list':
+                return 'ApplicationFOSMessageBundle:Messages:list.html.twig';
+                break;
+
+            default:
+                return parent::getTemplate($name);
+                break;
+        }
     }
 }
