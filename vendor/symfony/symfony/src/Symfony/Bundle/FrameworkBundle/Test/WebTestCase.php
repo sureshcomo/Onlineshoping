@@ -19,8 +19,10 @@ use Symfony\Component\HttpKernel\KernelInterface;
  * WebTestCase is the base class for functional tests.
  *
  * @author Fabien Potencier <fabien@symfony.com>
+ *
+ * abstract class WebTestCase extends \PHPUnit_Framework_TestCase
  */
-abstract class WebTestCase extends \PHPUnit_Framework_TestCase
+abstract class WebTestCase
 {
     protected static $class;
 

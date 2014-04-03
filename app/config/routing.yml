@@ -10,6 +10,9 @@ application_admin:
     resource: "@ApplicationAdminBundle/Resources/config/routing.yml"
     prefix:   /
 
+acme_demo:
+    resource: "@AcmeDemoBundle/"
+    prefix: /
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /admin

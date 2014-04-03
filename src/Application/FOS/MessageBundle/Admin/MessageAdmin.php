@@ -68,8 +68,7 @@ class MessageAdmin extends Admin
 
 //    protected function configureRoutes(RouteCollection $collection)
 //    {
-//        $collection->add('duplicate');
-//        $collection->add('message', $this->getRouterIdParameter().'/message');
+//        $collection->add('message', $this->getRouterIdParameter().'/admin/message');
 //    }
 
     public function getTemplate($name)
